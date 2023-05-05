@@ -128,13 +128,39 @@ img {
 }
 
 /* Services */
-.swiper {
-  width: 600px;
-  height: 300px;
+.wrapper-services {
+  padding: 0;
+}
+
+.services {
+  position: relative;
+  height: 234px;
+}
+
+.services::before {
+  position: absolute;
+  content: "";
+  width: 16px;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  background-image: linear-gradient(to left, transparent, var(--color-background));
+}
+
+.services::after {
+  position: absolute;
+  content: "";
+  width: 16px;
+  height: 100%;
+  right: 0;
+  top: 0;
+  z-index: 2;
+  background-image: linear-gradient(to right, transparent, var(--color-light));
 }
 
 .services__title {
-  padding: 16px 0;
+  padding: 16px 0 16px 16px;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
@@ -144,6 +170,16 @@ img {
   background-color: var(--color-light);
   background-image: linear-gradient(to right, var(--color-background) 30%, var(--color-light));
   border-top: 1px solid var(--color-accent);
+}
+
+.swiper {
+  padding: 20px 0 0 16px !important;
+  height: 130px;
+}
+
+.swiper-slide {
+  width: fit-content !important;
+  margin-right: 16px;
 }
 
 .servises__list {
@@ -164,7 +200,6 @@ img {
   position: relative;
   vertical-align: center;
   padding: 16px;
-
 }
 
 .services__item-button--apple {
@@ -211,7 +246,16 @@ img {
 
 @media screen and (min-width: 768px) {
 
+  .wrapper-services {
+    padding: 0 16px;
+  }
+
   .swiper {
+    display: none !important;
+  }
+
+  .services::before,
+  .services::after {
     display: none;
   }
 
@@ -226,7 +270,7 @@ img {
   .button-show-hide {
     width: fit-content;
   }
-  
+
   .services-item:nth-child(n+7) {
     display: none;
   }
