@@ -70,7 +70,6 @@ img {
   cursor: pointer;
 }
 
-
 .wrapper {
   padding: 0 16px;
   margin: 0 auto;
@@ -90,7 +89,6 @@ img {
   background-color: var(--color-background);
 }
 
-
 .button-show-hide::before,
 .button-show-hide::after {
   position: absolute;
@@ -103,25 +101,25 @@ img {
   border-radius: 1px 1px;
 }
 
-.button-show::before {
+.button-show-hide::before {
   transform: rotate(45deg);
   left: 10px;
   box-shadow: 3px 3px var(--color-accent-bright);
 }
 
-.button-show::after {
+.button-show-hide::after {
   transform: rotate(-45deg);
   left: 12.5px;
   box-shadow: -3px 3px var(--color-accent-bright);
 }
 
-.button-hide::before {
+.services__button-hide::before {
   transform: rotate(45deg);
   left: 12.5px;
   box-shadow: 3px 3px var(--color-accent-bright);
 }
 
-.button-hide::after {
+.services__button-hide::after {
   transform: rotate(-45deg);
   left: 10px;
   box-shadow: -3px 3px var(--color-accent-bright);
@@ -174,18 +172,12 @@ img {
 
 .swiper {
   padding: 20px 0 0 16px !important;
+  margin-left: 0px;
   height: 130px;
 }
 
-.swiper-slide {
-  width: fit-content !important;
-  margin-right: 16px;
-}
-
-.servises__list {
-  display: none;
-  flex-wrap: wrap;
-  padding: 24px 0;
+.swiper-slide-active, .swiper-slide-next {
+  max-width: 240px;
 }
 
 .services__item-button {
@@ -239,8 +231,7 @@ img {
   transform: rotate(45deg);
 }
 
-.services__button-hide,
-.services__button-show {
+.services__button {
   display: none;
 }
 
@@ -250,28 +241,21 @@ img {
     padding: 0 16px;
   }
 
-  .swiper {
-    display: none !important;
-  }
-
   .services::before,
   .services::after {
     display: none;
   }
 
-  .servises__list {
+  .services__list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-content: space-between;
     justify-items: stretch;
     gap: 16px 24px;
+    padding: 24px 0;
   }
 
-  .button-show-hide {
-    width: fit-content;
-  }
-
-  .services-item:nth-child(n+7) {
+  .services__item:nth-child(n+7) {
     display: none;
   }
 
@@ -280,22 +264,26 @@ img {
     width: 100%;
   }
 
-  .services__button-show {
+  .button-show-hide {
+    width: fit-content;
+  }
+
+  .services__button {
     display: inherit;
   }
 }
 
 @media screen and (min-width: 1120px) {
-  .servises__list {
+  .services__list {
     grid-template-columns: repeat(4, 1fr);
     gap: 16px 32px;
   }
 
-  .services-item:nth-child(n+7) {
+  .services__item:nth-child(n+7) {
     display: block;
   }
   
-  .services-item:nth-child(n+9) {
+  .services__item:nth-child(n+9) {
     display: none;
   }
 
