@@ -1,14 +1,11 @@
 if (document.documentElement.clientWidth < 768) {
-  const swiperBlock = document.querySelector('.services__main');
-  const swiperWrapper = document.querySelector('.services__list');
+  document.querySelector('.services__main').classList.add('swiper');
+  document.querySelector('.services__list').classList.add('swiper-wrapper');
+
   const swiperSlide = document.querySelectorAll('.services__item');
-
-  swiperBlock.classList.add('swiper');
-  swiperWrapper.classList.add('swiper-wrapper');
-
   for (let i = 0; i < swiperSlide.length; i++) {
     swiperSlide[i].classList.add('swiper-slide');
-    }
+  }
 
   swiper = new Swiper('.swiper', {
     sliderPerView: 'auto',
