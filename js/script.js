@@ -11,7 +11,6 @@ if (document.documentElement.clientWidth < 768) {
   	sliderPerView: 'auto',
    	spaceBetween: 16,
    	mousewheel: true,
-	speed: 500,
     	pagination: {
       		el: '.swiper-pagination',
       		clickable: true,
