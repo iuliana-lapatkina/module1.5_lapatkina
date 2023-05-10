@@ -8,12 +8,13 @@ if (document.documentElement.clientWidth < 768) {
   }
 
   swiper = new Swiper('.swiper', {
-    sliderPerView: 'auto',
-    spaceBetween: 16,
-    mousewheel: true,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
+  	sliderPerView: 'auto',
+   	spaceBetween: 16,
+   	mousewheel: true,
+	speed: 500,
+    	pagination: {
+      		el: '.swiper-pagination',
+      		clickable: true,
     }
   });
 }
